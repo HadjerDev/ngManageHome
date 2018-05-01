@@ -1,0 +1,41 @@
+<form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" > 
+    <input  class="form control" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+  <div class="form-group">
+        <label>Type:</label>
+        <input  class="form control" name="productType" #productType="ngModel" [(ngModel)]="productService.selectedProduct.productType" placeholder="Type du produit" required>
+  </div>
+
+  <div class="form-group">
+    <label>Nom:</label>
+    <input  class="form control" name="productName" #productName="ngModel" [(ngModel)]="productService.selectedProduct.productName" placeholder="Nom du produit" required>
+  </div>
+
+
+  <div class="form-group">
+    <label>Prix:</label>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <i class="fa fa-dollar"></i>
+      </div>
+      <input class="form control" name="productPrice" #productPrice="ngModel" [(ngModel)]="productService.selectedProduct.productPrice" placeholder="Prix du produit" required>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label>Quantité:</label>
+    <input class="form control" name="productQtt" #productQtt="ngModel" [(ngModel)]="productService.selectedProduct.productQtt" placeholder="Quantité du produit" required>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-default" type="submit"  [disabled]="!productForm.valid">
+      <i class="fa fa-floppy-o"></i>
+      Submit
+    </button>
+
+    <button class="btn btn-default" type="reset" (click)="resetForm(productForm)">
+      <i class="fa fa-repeat"></i>
+      Reset
+    </button>
+  </div>
+</form>
