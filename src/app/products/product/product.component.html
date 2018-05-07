@@ -1,8 +1,11 @@
+<h6 class="text-left">Enregistrement de produit</h6><br/>
 <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)" > 
-    <input  class="form control" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+    <input hidden class="form control" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
   <div class="form-group">
-        <label>Type:</label>
-        <input  class="form control" name="productType" #productType="ngModel" [(ngModel)]="productService.selectedProduct.productType" placeholder="Type du produit" required>
+        <label>Type:</label>     
+        <select class="form control" name="productType" #productType="ngModel"[(ngModel)]="productService.selectedProduct.productType">
+                 <option *ngFor= "let productT of productTs">{{productT}}</option>
+        </select>
   </div>
 
   <div class="form-group">
@@ -22,10 +25,7 @@
   </div>
 
 
-  <div class="form-group">
-    <label>Quantité:</label>
-    <input class="form control" name="productQtt" #productQtt="ngModel" [(ngModel)]="productService.selectedProduct.productQtt" placeholder="Quantité du produit" required>
-  </div>
+  
 
   <div class="form-group">
     <button class="btn btn-default" type="submit"  [disabled]="!productForm.valid">

@@ -29,4 +29,12 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  onEdit(product:Product){
+    this.productService.selectedProduct=product;
+  }
+  onDelete(key:string){
+    this.productService.deleteProduct(key);
+    this.tostr.success('Suppression de produit', 'Produit supprimé')
+  }
+
 }

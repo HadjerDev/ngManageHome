@@ -1,9 +1,10 @@
-<h6 class="text-center">Enregistrement de produits</h6><br/>
+<h6 class="text-center">Liste des produits</h6><br/>
 <table class="table table-sm table-hover">
   
   <tr *ngFor ="let product of productList">
     <td>{{product.productType}}</td>
     <td>{{product.productName}}</td>
+    <td>{{product.productPrice}}</td>
     <td>
       <a  class="btn" (click) = "onEdit(product)">
         <i class="fa fa-pencil-square-o"></i>

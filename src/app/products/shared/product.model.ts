@@ -3,5 +3,6 @@ export class Product {
  productType: string;
  productName: string;
  productPrice: number;
- productQtt: number;    
+// productQtt: number;    
 }
+

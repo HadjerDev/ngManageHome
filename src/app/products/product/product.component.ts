@@ -10,7 +10,7 @@ import { ToastrService } from'ngx-toastr';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-
+  productTs =["Alimentation", "Cosmétique", "Nettooyage"];
   constructor(private productService : ProductService, private tostr : ToastrService) { }
 
   ngOnInit() {
@@ -18,12 +18,14 @@ export class ProductComponent implements OnInit {
     this.resetForm();
   }
   onSubmit(productForm : NgForm){
-   
-    
-    this.productService.insertProduct(productForm.value);
+    if(productForm.value.$key == null)
+      this.productService.insertProduct(productForm.value);
+    else
+      this.productService.updateProduct(productForm.value)
+      
     this.resetForm(productForm);
     this.tostr.success('produit enregistré','enregistrement de produit');
-    
+      
     
   }
   resetForm(productForm ?:NgForm){

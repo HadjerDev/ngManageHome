@@ -1,0 +1,38 @@
+<h6 class="text-left">Créer une liste pour le mois de ..</h6><br/>
+<form #listeMoisForm="ngForm" (ngSubmit)="onSubmit(listeMoisForm)" > 
+<!--     <input hidden class="form control" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+ -->    <div class="form-group">
+        <label>Date:</label>
+        <input type="date" class="form control" name="productName"  required>
+      </div>
+
+
+  <div class="form-group">
+      <label>Type de liste:</label>     
+      <select class="form control" name="listeType" #listeType="ngModel"[(ngModel)]="ListeMS.selectedListMois.listeType">
+               <option *ngFor= "let listeT of listeTs">{{listeT}}</option>
+      </select>
+  </div>
+
+  
+
+  
+
+
+
+
+  
+
+  <div class="form-group">
+    <button class="btn btn-default" type="submit"  [disabled]="!listeMoisForm.valid">
+      <i class="fa fa-floppy-o"></i>
+      Submit
+    </button>
+
+    <button class="btn btn-default" type="reset" (click)="resetForm(listeMoisForm)">
+      <i class="fa fa-repeat"></i>
+      Reset
+    </button>
+  </div>
+  <app-product-list></app-product-list>
+</form>

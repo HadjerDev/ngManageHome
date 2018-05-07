@@ -11,6 +11,11 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { ListeDuMoisComponent } from './lists-oflist/liste-du-mois/liste-du-mois.component';
+import { HomeComponent } from './home/home.component';
+import { ListsOflistComponent } from './lists-oflist/lists-oflist.component';
+
+
 
 
 @NgModule({
@@ -18,7 +23,10 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
     AppComponent,
     ProductsComponent,
     ProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    ListeDuMoisComponent,
+    HomeComponent,
+    ListsOflistComponent
   ],
   imports: [
     BrowserModule,

@@ -14,14 +14,14 @@ export class ProductService {
   getData(){
     this.productList = this.firebase.list('products');
     return this.productList;
-  }
+  }//getDate() it makes a initial list for on the firebase where other individual products will be saved
 
   insertProduct(product:Product){
     this.productList.push({
       productType: product.productType,
       productName: product.productName,
       productPrice: product.productPrice,
-      productQtt: product.productQtt
+     // productQtt: product.productQtt
     });
  
   }
@@ -31,11 +31,11 @@ export class ProductService {
       productType: product.productType,
       productName: product.productName,
       productPrice: product.productPrice,
-      productQtt: product.productQtt
+     // productQtt: product.productQtt
     });
   }
 
-  deleteProduct($key:string){
-    this.productList.remove($key);
+  deleteProduct(key:string){
+    this.productList.remove(key);
   }
 }

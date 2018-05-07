@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './shared/product.service';
-import { ToastrModule } from 'ngx-toastr';
+
+
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productService : ProductService, private tostr :ToastrModule) { }
+  constructor(private productService : ProductService) { }
 
   ngOnInit() {
   }
