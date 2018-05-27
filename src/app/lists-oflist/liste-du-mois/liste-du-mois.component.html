@@ -9,20 +9,10 @@
 
   <div class="form-group">
       <label>Type de liste:</label>     
-      <select class="form control" name="listeType" #listeType="ngModel"[(ngModel)]="ListeMS.selectedListMois.listeType">
-               <option *ngFor= "let listeT of listeTs">{{listeT}}</option>
+      <select class="form control" id="listeType" name="listeType" #listeType="ngModel"[(ngModel)]="ListeMS.selectedListMois.listeType">
+               <option [value]="listeT.option" *ngFor= "let listeT of listeTs">{{listeT.option}}</option>
       </select>
   </div>
-
-  
-
-  
-
-
-
-
-  
-
   <div class="form-group">
     <button class="btn btn-default" type="submit"  [disabled]="!listeMoisForm.valid">
       <i class="fa fa-floppy-o"></i>
@@ -34,5 +24,11 @@
       Reset
     </button>
   </div>
-  <app-product-list></app-product-list>
+
+<!--show the selected liste-->
+<div *ngIf="ListeMS.selectedListMois.listeType==='Liste d\'achats'"> <!--*ngIf="listeType.value==='Liste d\'achats'"-->
+    <app-product-list-to-select></app-product-list-to-select>
+</div>
+
 </form>
+

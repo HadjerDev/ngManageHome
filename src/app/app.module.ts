@@ -14,6 +14,7 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { ListeDuMoisComponent } from './lists-oflist/liste-du-mois/liste-du-mois.component';
 import { HomeComponent } from './home/home.component';
 import { ListsOflistComponent } from './lists-oflist/lists-oflist.component';
+import { ProductListToSelectComponent } from './lists-oflist/product-list-to-select/product-list-to-select.component';
 
 
 
@@ -26,7 +27,8 @@ import { ListsOflistComponent } from './lists-oflist/lists-oflist.component';
     ProductListComponent,
     ListeDuMoisComponent,
     HomeComponent,
-    ListsOflistComponent
+    ListsOflistComponent,
+    ProductListToSelectComponent
   ],
   imports: [
     BrowserModule,
